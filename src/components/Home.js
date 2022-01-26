@@ -3,7 +3,7 @@ import Hero from "./Hero";
 const Home = () => {
   return (
     <>
-      <Hero text="Welcome to Movie App, powered by TMDB" />
+      <Hero text="Welcome to Movie Browser App, powered by TMDB" />
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 my-5">

@@ -31,13 +31,52 @@ const Navbar = ({ setSearchText }) => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle"
+                role="button"
+                id="navbarDropdown"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Genres
+              </span>
+              <div
+                className="dropdown-menu animate slideIn"
+                aria-labelledby="navbarDropdown"
+              >
+                <Link className="dropdown-item border-bottom" to="/genre/28">
+                  Action
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/12">
+                  Adventure
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/16">
+                  Animation
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/35">
+                  Comedy
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/14">
+                  Fantasy
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/27">
+                  Horror
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/878">
+                  Science Fiction
+                </Link>
+                <Link className="dropdown-item border-bottom" to="/genre/53">
+                  Thriller
+                </Link>
+                <Link className="dropdown-item" to="/genre/10752">
+                  War
+                </Link>
+              </div>
             </li>
             <li className="nav-item">
-              <Link className="nav-link disabled" to="somewhere">
+              <Link className="nav-link disabled" to="/somewhere">
                 Coming soon
               </Link>
             </li>

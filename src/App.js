@@ -2,12 +2,12 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import AboutView from "./components/AboutView";
 import SearchView from "./components/SearchView";
 import MainView from "./components/MovieView/MainView";
+import GenreView from "./components/GenreView";
 import NotFoundView from "./components/NotFoundView";
-import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path="*" element={<NotFoundView />} />
         <Route path="/" element={<Home />} exact></Route>
-        <Route path="/about" element={<AboutView />} />
+        <Route path="/genre/:id" element={<GenreView />} />
         <Route
           path="/search"
           element={
