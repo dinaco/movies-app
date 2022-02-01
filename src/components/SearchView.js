@@ -5,7 +5,7 @@ const SearchView = ({ keyword, searchResults }) => {
   const title = `You are searching for: ${keyword}`;
 
   const resultsHTML = searchResults.map((obj, i) => {
-    return <MovieCard movie={obj} key={i} />;
+    return <MovieCard movie={obj} key={i} extrainfo={true} />;
   });
 
   return (

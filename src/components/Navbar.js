@@ -17,7 +17,7 @@ const Navbar = ({ setSearchText }) => {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="somewherenavbarSupportedContent"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -46,39 +46,70 @@ const Navbar = ({ setSearchText }) => {
                 className="dropdown-menu animate slideIn"
                 aria-labelledby="navbarDropdown"
               >
-                <Link className="dropdown-item border-bottom" to="/genre/28">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/action"
+                  state={{ linkId: 28 }}
+                >
                   Action
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/12">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/adventure"
+                  state={{ linkId: 12 }}
+                >
                   Adventure
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/16">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/animation"
+                  state={{ linkId: 16 }}
+                >
                   Animation
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/35">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/comedy"
+                  state={{ linkId: 35 }}
+                >
                   Comedy
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/14">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/fantasy"
+                  state={{ linkId: 14 }}
+                >
                   Fantasy
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/27">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/horror"
+                  state={{ linkId: 27 }}
+                >
                   Horror
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/878">
-                  Science Fiction
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/sci-fi"
+                  state={{ linkId: 878 }}
+                >
+                  Sci-Fi
                 </Link>
-                <Link className="dropdown-item border-bottom" to="/genre/53">
+                <Link
+                  className="dropdown-item border-bottom"
+                  to="/genre/thriller"
+                  state={{ linkId: 53 }}
+                >
                   Thriller
                 </Link>
-                <Link className="dropdown-item" to="/genre/10752">
+                <Link
+                  className="dropdown-item"
+                  to="/genre/war"
+                  state={{ linkId: 10752 }}
+                >
                   War
                 </Link>
               </div>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="/somewhere">
-                Coming soon
-              </Link>
             </li>
           </ul>
           <form className="d-flex">
@@ -89,9 +120,6 @@ const Navbar = ({ setSearchText }) => {
               aria-label="Search"
               onChange={updateSearchText}
             />
-            <button className="btn btn-outline-dark" type="submit">
-              Search
-            </button>
           </form>
         </div>
       </div>

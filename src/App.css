@@ -81,3 +81,10 @@
 .card:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
+.carousel-caption {
+  text-shadow: 0px 1px 2px rgb(0 0 0 / 50%);
+}
+.card-hscroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+}

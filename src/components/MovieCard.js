@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, extrainfo = false }) => {
   const posterUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
   const detailsView = `/movies/${movie.id}`;
   return (
-    <div className="col-lg-3 col-md-2 col-2 my-4 d-flex align-items-stretch">
+    <div className="col-lg-3 col-md-4 col-6 my-4 d-flex align-items-stretch justify-content-center">
       <div className="card">
         <Link className="poster" to={detailsView}>
           {" "}
@@ -20,7 +20,11 @@ const MovieCard = ({ movie }) => {
           <span
             className={
               "p-2 badge mx-3 d-flex justify-content-center " +
-              (movie.vote_average > 7 ? "bg-success" : "bg-danger")
+              (!movie.vote_average
+                ? "bg-primary"
+                : movie.vote_average > 7
+                ? "bg-success"
+                : "bg-danger")
             }
           >
             {movie.vote_average ? movie.vote_average : "-"}
@@ -38,24 +42,26 @@ const MovieCard = ({ movie }) => {
             </svg>
           </span>
         </Link>
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{movie.original_title}</h5>
-          <p className="card-text" maxLength="10">
-            {movie.overview.length > 50 ? (
-              `${movie.overview.substring(0, 50)} ...`
-            ) : movie.overview ? (
-              movie.overview
-            ) : (
-              <span className="text-warning">No description from TMDB</span>
-            )}
-          </p>
-          <Link
-            to={detailsView}
-            className="btn btn-primary mt-auto align-self-start"
-          >
-            More info
-          </Link>
-        </div>
+        {extrainfo && (
+          <div className="card-body d-none d-md-flex flex-column">
+            <h5 className="card-title">{movie.original_title}</h5>
+            <p className="card-text" maxLength="10">
+              {movie.overview.length > 50 ? (
+                `${movie.overview.substring(0, 50)} ...`
+              ) : movie.overview ? (
+                movie.overview
+              ) : (
+                <span className="text-warning">No description from TMDB</span>
+              )}
+            </p>
+            <Link
+              to={detailsView}
+              className="btn btn-primary mt-auto align-self-start"
+            >
+              More info
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
